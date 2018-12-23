@@ -72,4 +72,4 @@ def request(url):
         [dict] ogp_data: Extracted `Page title`, `Opengraph` and `SEO` meta data, 
     """
     res = requests.get(url)
-    return res.status_code, domparser(BeautifulSoup(res.text, 'lxml'))
+    return res.status_code, domparser(BeautifulSoup(res.text, 'html.parser'))

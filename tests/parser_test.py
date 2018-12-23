@@ -25,7 +25,7 @@ thisdir = os.path.dirname(__file__)
 srcfile = os.path.join(thisdir, 'dummy.html')
 dstfile = os.path.join(thisdir, 'dummy_result.json')
 with open(srcfile, 'r') as f:
-    dom = BeautifulSoup(f.read())
+    dom = BeautifulSoup(f.read(), 'html.parser')
 with open(dstfile, 'r') as f:
     gt = json.loads(f.read())
 
