@@ -62,15 +62,18 @@ def domparser(dom):
         'seo': __parse_seo(metas)
     }
 
-def request(url):
+def request(url, apparent_encoding=False):
     """
     HTTP Request And Dom parsing.
 
     Arguments: 
         url: Request URL
+        apparent_encoding: if True: use apparent_encoding, else: no apparent_encoding
     Return:
         [int]  status_code: HTTP Status Code
         [dict] ogp_data: Extracted `Page title`, `Opengraph` and `SEO` meta data, 
     """
     res = requests.get(url)
+    if apparent_encoding:
+        res.encoding = res.apparent_encoding
     return res.status_code, domparser(BeautifulSoup(res.text, 'html.parser'))
