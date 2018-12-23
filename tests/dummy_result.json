@@ -1,0 +1,61 @@
+{
+    "title": "test title",
+    "ogp": {
+        "og:title": [
+            "HogeHoge Title"
+        ],
+        "og:type": [
+            "website",
+            "video.other"
+        ],
+        "og:url": [
+            "http://hogehoge.com/",
+            "https://hogehogeUrl"
+        ],
+        "og:image": [
+            "http://hogehoge.com/logo.png",
+            "https://hogehogeBodyImage"
+        ],
+        "og:image:type": [
+            "image/png"
+        ],
+        "og:image:width": [
+            "300",
+            "600"
+        ],
+        "og:image:height": [
+            "300",
+            "600"
+        ],
+        "og:image:alt": [
+            "HogeHoge logo"
+        ],
+        "og:description": [
+            "HogeHoge description.",
+            "HogeHoge BodyDescription"
+        ],
+        "fb:app_id": [
+            "xxxxxxxxxx"
+        ],
+        "twitter:title": [
+            "HoeHoge Twitter Title!"
+        ],
+        "twitter:description": [
+            "HogeHoge Twitter description"
+        ],
+        "twitter:card": [
+            "HogeHoge TwitterCard"
+        ],
+        "twitter:site": [
+            "@TwitterHogeHoge"
+        ],
+        "twitter:image": [
+            "https://hogehogeTwitterImage"
+        ]
+    },
+    "seo": {
+        "description": [
+            "世界中のあらゆる情報を検索するためのツールを提供しています。さまざまな検索機能を活用して、お探しの情報を見つけてください。"
+        ]
+    }
+}

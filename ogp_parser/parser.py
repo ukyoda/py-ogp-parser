@@ -13,4 +13,6 @@ def parser(url):
     """
     res = requests.get(url)
     dom = BeautifulSoup(res.text)
+    metas = dom.select('head meta');
+    title = str(dom.select('head title').string);
     
