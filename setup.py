@@ -28,7 +28,7 @@ class PyTest(TestCommand):
 
 setup(
     name='py-ogp-parser',
-    version='0.1',
+    version='0.2',
     description='Opengraph Protocol Parser',
     url='https://github.com/ukyoda/py-ogp-parser',
     author='ukyoda',
