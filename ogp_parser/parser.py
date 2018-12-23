@@ -2,6 +2,14 @@ from bs4 import BeautifulSoup
 import requests
 
 def __parse_ogp(metas):
+    """
+    Extract meta tag contents data having `property`.
+
+    Arguments:
+        metas: Extracted meta tag data having `contents`
+    Return:
+        [dict] results: Extracted meta tag contents data having `property`
+    """
     ogps = list(filter(lambda x: x.has_attr('property'), metas))
     results = {}
     for ogp in ogps:
@@ -14,6 +22,14 @@ def __parse_ogp(metas):
 
 
 def __parse_seo(metas):
+    """
+    Extract meta tag contents data having `name`.
+
+    Arguments:
+        metas: Extracted meta tag data having `contents`
+    Return:
+        [dict] results: Extracted meta tag contents data having `name`
+    """
     ogps = list(filter(lambda x: x.has_attr('name'), metas))
     results = {}
     for ogp in ogps:
@@ -24,20 +40,20 @@ def __parse_seo(metas):
         results[prop].append(content)
     return results
 
-def parsedom(dom):
+def domparser(dom):
     """
     Get Opengraph data or SEO data.
 
     Arguments:
-        url: target URL
+        dom: BeautifulSoup4 Object
     
     Return:
-        [dict] OpenGraph and SEO data
+        [dict] Page title and OpenGraph data and SEO data
     """
-    metas = dom.select('meta');
+    metas = dom.select('meta')
     metas = list(filter(lambda x: x.has_attr('content'), metas))
 
-    title = str(dom.find('head').find('title').string);
+    title = str(dom.find('head').find('title').string)
         
     return {
         'title': title,
@@ -46,4 +62,14 @@ def parsedom(dom):
     }
 
 def request(url):
-    pass
+    """
+    HTTP Request And Dom parsing.
+
+    Arguments: 
+        url: Request URL
+    Return:
+        [int]  status_code: HTTP Status Code
+        [dict] ogp_data: Extracted `Page title`, `Opengraph` and `SEO` meta data, 
+    """
+    res = requests.get(url)
+    return res.status_code, domparser(BeautifulSoup(res.text, 'lxml'))

@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from ogp_parser.parser import parsedom
+from ogp_parser.parser import domparser
 
 
 def check_keys(dst, gt):
@@ -29,7 +29,7 @@ with open(srcfile, 'r') as f:
 with open(dstfile, 'r') as f:
     gt = json.loads(f.read())
 
-result = parsedom(dom)
+result = domparser(dom)
 
 assert gt['title'] == result['title'], 'タイトルが違う!!'
 check_keys(result, gt)
