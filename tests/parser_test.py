@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from ogp_parser.parser import domparser
+from py_ogp_parser.parser import domparser
 
 
 def check_keys(dst, gt):

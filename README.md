@@ -10,13 +10,13 @@
 requestをimportしてください。
 
 ```python
-from ogp_parser.parser import request
+from py_ogp_parser.parser import request
 ```
 
 ## サンプル
 
 ```python
-from ogp_parser.parser import request
+from py_ogp_parser.parser import request
 import json
 
 status_code, result = request('http://ogp.me')
@@ -28,7 +28,7 @@ print(json.dumps(result, indent=4))
 ## 出力結果サンプル
 
 ```python
->>> from ogp_parser.parser import request
+>>> from py_ogp_parser.parser import request
 >>> import json
 >>> status_code, result = request('http://ogp.me')
 >>> print(status_code)
